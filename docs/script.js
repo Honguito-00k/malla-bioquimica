@@ -73,13 +73,11 @@ function aprobarRamo(ramo) {
   div.classList.add("aprobado");
   estadoRamos[ramo.id] = true;
 
-  // Desbloquear los ramos dependientes
   ramo.desbloquea.forEach(id => {
     const next = document.getElementById(id);
     if (next) next.classList.remove("bloqueado");
   });
 
-  // Hitos con condición de todos los semestres aprobados
   if (ramo.id === "ui2") {
     if (estadoRamos["ui2"]) {
       document.getElementById("ui3").classList.remove("bloqueado");
