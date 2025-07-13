@@ -3,39 +3,57 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Malla Bioquímica 2024</title>
+  <title>Malla Bioquímica USS 2024</title>
   <style>
-    body { font-family: sans-serif; background: #f8f9fa; padding: 20px; }
-    h1 { text-align: center; }
-    .semestre { border: 1px solid #ccc; border-radius: 10px; padding: 10px; margin: 10px; background: #fff; }
-    .ramos { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; }
-    .ramo { border: 1px solid #ddd; border-radius: 5px; padding: 10px; background: #e9ecef; cursor: pointer; }
-    .ramo:hover { background: #dee2e6; }
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f2f5;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+    }
+    .grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    .semestre {
+      background: #ffffff;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      padding: 15px;
+      width: 280px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    }
+    .semestre h2 {
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: #2980b9;
+    }
+    .ramo {
+      background: #eaf2f8;
+      margin: 6px 0;
+      padding: 8px;
+      border-radius: 6px;
+      cursor: help;
+      transition: background 0.2s ease;
+    }
+    .ramo:hover {
+      background: #d6eaf8;
+    }
   </style>
 </head>
 <body>
-  <h1>Malla Bioquímica USS 2024</h1>
+  <h1>Malla Curricular Bioquímica USS 2024</h1>
 
-  <div class="semestre">
-    <h2>Semestre 1</h2>
-    <div class="ramos">
+  <div class="grid">
+
+    <div class="semestre">
+      <h2>Semestre 1</h2>
       <div class="ramo">Biología Celular</div>
       <div class="ramo">Química General</div>
-      <div class="ramo">Matemáticas</div>
-      <div class="ramo">Comunicación Científica</div>
-    </div>
-  </div>
 
-  <div class="semestre">
-    <h2>Semestre 2</h2>
-    <div class="ramos">
-      <div class="ramo" title="Requiere Química General">Química Orgánica</div>
-      <div class="ramo">Física</div>
-      <div class="ramo">Biología Molecular</div>
-      <div class="ramo">Bioestadística</div>
-    </div>
-  </div>
-
-  <!-- Agrega más semestres según tu malla -->
-</body>
-</html>
