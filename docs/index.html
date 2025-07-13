@@ -1,133 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Malla Bioquímica USS 2024</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f4f6f8;
-      margin: 0;
-      padding: 20px;
-    }
-    h1 {
-      text-align: center;
-      color: #2c3e50;
-    }
-    .grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
-    .semestre {
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      padding: 15px;
-      width: 270px;
-    }
-    .semestre h3 {
-      margin-top: 0;
-      color: #2980b9;
-      font-size: 18px;
-    }
-    .ramo {
-      background: #ecf0f1;
-      margin: 5px 0;
-      padding: 8px;
-      border-radius: 6px;
-      cursor: help;
-    }
-    .ramo:hover {
-      background: #d0dce3;
-    }
-  </style>
+  <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
-  <h1>Malla Curricular Bioquímica USS 2024</h1>
-
-  <div class="grid">
-    <div class="semestre">
-      <h3>Semestre 1</h3>
-      <div class="ramo">Biología Celular</div>
-      <div class="ramo">Química General I</div>
-      <div class="ramo">Matemática</div>
-      <div class="ramo">Formación e Identidad: Antropología</div>
-    </div>
-
-    <div class="semestre">
-      <h3>Semestre 2</h3>
-      <div class="ramo" title="Requiere Química General I">Química General II</div>
-      <div class="ramo">Cálculo Diferencial</div>
-      <div class="ramo">Física</div>
-      <div class="ramo">Persona y Sociedad</div>
-    </div>
-
-    <div class="semestre">
-      <h3>Semestre 3</h3>
-      <div class="ramo" title="Requiere Química General II">Química Orgánica</div>
-      <div class="ramo">Bioestadística</div>
-      <div class="ramo">Biología Molecular y Genética</div>
-      <div class="ramo">Formación e Identidad: Ética</div>
-    </div>
-
-    <div class="semestre">
-      <h3>Semestre 4</h3>
-      <div class="ramo" title="Requiere Química Orgánica">Química Orgánica Avanzada</div>
-      <div class="ramo">Microbiología General</div>
-      <div class="ramo">Fisicoquímica</div>
-      <div class="ramo">Bioestadística Avanzada</div>
-    </div>
-
-    <div class="semestre">
-      <h3>Semestre 5</h3>
-      <div class="ramo">Química Analítica Cuali-Cuantitativa</div>
-      <div class="ramo">Introducción a la Bioquímica</div>
-      <div class="ramo">Unidad de Investigación I</div>
-      <div class="ramo">Gestión de Carrera y Desarrollo Profesional</div>
-    </div>
-
-    <div class="semestre">
-      <h3>Semestre 6</h3>
-      <div class="ramo" title="Requiere Introducción a la Bioquímica">Bioquímica General</div>
-      <div class="ramo">Biofísica</div>
-      <div class="ramo">Biología Celular Avanzada</div>
-      <div class="ramo">Bases de las Ciencias Ómicas y Bioinformáticas</div>
-    </div>
-
-    <div class="semestre">
-      <h3>Semestre 7</h3>
-      <div class="ramo">Química Fisiopatológica y Farmacológica</div>
-      <div class="ramo">Inmunología</div>
-      <div class="ramo">Bioquímica Avanzada</div>
-      <div class="ramo">Electivo I (Formación e Identidad)</div>
-    </div>
-
-    <div class="semestre">
-      <h3>Semestre 8</h3>
-      <div class="ramo">Patología Molecular</div>
-      <div class="ramo">Genética Molecular</div>
-      <div class="ramo">Unidad de Investigación II</div>
-      <div class="ramo">Electivo II (Formación e Identidad)</div>
-    </div>
-
-    <div class="semestre">
-      <h3>Semestre 9</h3>
-      <div class="ramo">Microbiología Molecular</div>
-      <div class="ramo">Control de Calidad y Gestión de Laboratorio</div>
-      <div class="ramo">Unidad de Investigación III</div>
-      <div class="ramo">Electivo III (Formación e Identidad)</div>
-    </div>
-
-    <div class="semestre">
-      <h3>Semestre 10</h3>
-      <div class="ramo">Laboratorio Integrado de Bioquímica</div>
-      <div class="ramo">Bioquímica Clínica</div>
-      <div class="ramo">Formulación de Proyectos</div>
-      <div class="ramo">Memoria de Título</div>
-    </div>
-  </div>
+  <h1>Malla Interactiva Bioquímica USS 2024</h1>
+  <div class="malla" id="malla"></div>
+  <script src="script.js"></script>
 </body>
 </html>
