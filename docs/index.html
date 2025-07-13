@@ -7,7 +7,7 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #f0f2f5;
+      background: #f4f6f8;
       margin: 0;
       padding: 20px;
     }
@@ -18,40 +18,36 @@
     .grid {
       display: flex;
       flex-wrap: wrap;
-      gap: 20px;
       justify-content: center;
+      gap: 20px;
     }
     .semestre {
-      background: #ffffff;
-      border: 1px solid #ddd;
-      border-radius: 12px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
       padding: 15px;
-      width: 280px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      width: 250px;
     }
     .semestre h2 {
-      font-size: 18px;
-      margin-bottom: 10px;
+      margin-top: 0;
       color: #2980b9;
+      font-size: 18px;
     }
     .ramo {
-      background: #eaf2f8;
-      margin: 6px 0;
+      background: #ecf0f1;
+      margin: 5px 0;
       padding: 8px;
       border-radius: 6px;
       cursor: help;
-      transition: background 0.2s ease;
     }
     .ramo:hover {
-      background: #d6eaf8;
+      background: #d0dce3;
     }
   </style>
 </head>
 <body>
-  <h1>Malla Curricular Bioquímica USS 2024</h1>
-
+  <h1>Malla Bioquímica USS 2024</h1>
   <div class="grid">
-
     <div class="semestre">
       <h2>Semestre 1</h2>
       <div class="ramo">Biología Celular</div>
@@ -59,7 +55,6 @@
       <div class="ramo">Matemática I</div>
       <div class="ramo">Comunicación Científica</div>
     </div>
-
     <div class="semestre">
       <h2>Semestre 2</h2>
       <div class="ramo" title="Requiere Química General">Química Orgánica</div>
@@ -67,9 +62,7 @@
       <div class="ramo" title="Requiere Matemática I">Bioestadística</div>
       <div class="ramo">Física</div>
     </div>
-
-    <div class="semestre">
-      <h2>Semestre 3</h2>
+     <h2>Semestre 3</h2>
       <div class="ramo" title="Requiere Química Orgánica">Química Orgánica II</div>
       <div class="ramo" title="Requiere Biología Molecular">Genética</div>
       <div class="ramo" title="Requiere Física">Física Aplicada</div>
