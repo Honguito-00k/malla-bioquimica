@@ -65,14 +65,12 @@ const ramos = [
 const estado = {};
 
 function inicializarEstado() {
-  ramos.forEach(r => {
-    estado[r.id] = false;
-  });
+  ramos.forEach(r => estado[r.id] = false);
 }
 
 function crearMalla() {
   const contenedor = document.getElementById("malla-container");
-  contenedor.innerHTML = ""; // limpiar contenido anterior
+  contenedor.innerHTML = "";
 
   for (let s = 1; s <= 10; s++) {
     const bloque = document.createElement("div");
@@ -102,22 +100,23 @@ function crearMalla() {
 
 function aprobarRamo(id) {
   const btn = document.getElementById(id);
-  if (btn.disabled) return;
+  if (!btn) return;
 
-  if (estado[id]) {
-    estado[id] = false;
-    btn.classList.remove("aprobado");
-  } else {
-    estado[id] = true;
-    btn.classList.add("aprobado");
-  }
+  // Toggle estado
+  estado[id] = !estado[id];
+  btn.classList.toggle("aprobado");
 
-  // Actualizar estado de botones según requisitos
+  // Actualizar estado de los demás botones
   ramos.forEach(r => {
-    const requisitosOk = !r.requiere || r.requiere.every(req => estado[req]);
     const btnRamo = document.getElementById(r.id);
-    if (btnRamo) {
-      btnRamo.disabled = !requisitosOk || estado[r.id];
+    if (!btnRamo) return;
+
+    const requisitosOk = !r.requiere || r.requiere.every(req => estado[req]);
+
+    if (!estado[r.id] && requisitosOk) {
+      btnRamo.disabled = false;
+    } else if (!estado[r.id]) {
+      btnRamo.disabled = true;
     }
   });
 }

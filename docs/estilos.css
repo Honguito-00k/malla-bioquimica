@@ -1,4 +1,4 @@
-/* Contenedor general de la malla */
+/* Contenedor general */
 #malla-container {
   display: flex;
   flex-direction: column;
@@ -7,9 +7,9 @@
   font-family: Arial, sans-serif;
 }
 
-/* Bloque de cada semestre */
+/* Semestre */
 .semestre {
-  border: 2px solid #005080; /* azul oscuro */
+  border: 2px solid #005080;
   border-radius: 8px;
   padding: 10px;
 }
@@ -17,59 +17,59 @@
 /* Título del semestre */
 .semestre h2 {
   margin: 0 0 10px 0;
-  color: #003355; /* azul más oscuro */
+  color: #003355;
   text-align: center;
 }
 
-/* Contenedor de los ramos en fila */
+/* Contenedor de ramos (en columna) */
 .ramos {
   display: flex;
-  flex-wrap: column;
+  flex-direction: column;
   gap: 8px;
-  justify-content: flex-start;
+  align-items: flex-start;
 }
 
-/* Estilo base para cada ramo (botón) */
+/* Botón de ramo */
 .ramo {
-  background-color: #f9d6d5; /* rojo muy claro */
-  border: 2px solid #d9534f; /* rojo medio */
-  color: #a94442; /* rojo oscuro */
+  background-color: #f9d6d5;
+  border: 2px solid #d9534f;
+  color: #a94442;
   padding: 8px 12px;
   border-radius: 6px;
   cursor: pointer;
   font-weight: 600;
   user-select: none;
-  transition: background-color 0.3s, color 0.3s;
-  flex: 1 1 150px; /* ancho base, flexible */
-  max-width: 250px;
+  transition: all 0.3s ease;
+  width: 100%;
+  max-width: 400px;
+  text-align: left;
 }
 
-/* Estado deshabilitado (no puede seleccionar) */
+/* Deshabilitado */
 .ramo:disabled {
-  background-color: #fce4e3; /* rojo muy pálido */
+  background-color: #fce4e3;
   border-color: #f5c6c5;
   color: #e99a99;
   cursor: not-allowed;
 }
 
-/* Estado aprobado */
+/* Aprobado */
 .ramo.aprobado {
-  background-color: #003366; /* azul oscuro */
+  background-color: #003366;
   border-color: #002244;
-  color: #cce6ff; /* texto claro */
+  color: #cce6ff;
   text-decoration: line-through;
 }
 
-/* Al pasar el mouse sobre botones habilitados */
+/* Hover activo */
 .ramo:not(:disabled):hover {
-  background-color: #e04e4b; /* rojo vivo */
+  background-color: #e04e4b;
   color: white;
 }
 
-/* Para dispositivos móviles o pantallas pequeñas */
+/* Móvil */
 @media (max-width: 600px) {
   .ramo {
-    flex: 1 1 100%;
     max-width: 100%;
   }
 }
