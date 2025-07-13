@@ -1,62 +1,75 @@
-
-body {
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #f4faff;
-  margin: 0;
+/* Contenedor general de la malla */
+#malla-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
   padding: 20px;
-  color: #003366;
+  font-family: Arial, sans-serif;
 }
 
-h1 {
-  text-align: center;
-  margin-bottom: 30px;
-  color: #004080;
-}
-
+/* Bloque de cada semestre */
 .semestre {
-  margin-bottom: 30px;
+  border: 2px solid #005080; /* azul oscuro */
+  border-radius: 8px;
+  padding: 10px;
 }
 
+/* Título del semestre */
 .semestre h2 {
-  color: #004080;
+  margin: 0 0 10px 0;
+  color: #003355; /* azul más oscuro */
   text-align: center;
-  margin-bottom: 15px;
 }
 
+/* Contenedor de los ramos en fila */
 .ramos {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
-button.ramo {
-  background-color: #d0ecff;
-  border: 2px solid #0074cc;
-  border-radius: 10px;
-  padding: 10px;
-  min-width: 200px;
-  font-size: 14px;
+/* Estilo base para cada ramo (botón) */
+.ramo {
+  background-color: #f9d6d5; /* rojo muy claro */
+  border: 2px solid #d9534f; /* rojo medio */
+  color: #a94442; /* rojo oscuro */
+  padding: 8px 12px;
+  border-radius: 6px;
   cursor: pointer;
-  transition: background-color 0.3s, transform 0.2s;
-  box-shadow: 1px 1px 5px rgba(0,0,0,0.1);
-  text-align: center;
+  font-weight: 600;
+  user-select: none;
+  transition: background-color 0.3s, color 0.3s;
+  flex: 1 1 150px; /* ancho base, flexible */
+  max-width: 250px;
 }
 
-button.ramo:hover:not(:disabled) {
-  background-color: #a6e1ff;
-  transform: scale(1.02);
-}
-
-button.ramo:disabled {
-  background-color: #e6e6e6;
-  border-color: #cccccc;
-  color: #777;
+/* Estado deshabilitado (no puede seleccionar) */
+.ramo:disabled {
+  background-color: #fce4e3; /* rojo muy pálido */
+  border-color: #f5c6c5;
+  color: #e99a99;
   cursor: not-allowed;
 }
 
-button.ramo.aprobado {
-  background-color: #b2f0b2;
-  border-color: #38a169;
-  color: #084c14;
+/* Estado aprobado */
+.ramo.aprobado {
+  background-color: #003366; /* azul oscuro */
+  border-color: #002244;
+  color: #cce6ff; /* texto claro */
+  text-decoration: line-through;
+}
+
+/* Al pasar el mouse sobre botones habilitados */
+.ramo:not(:disabled):hover {
+  background-color: #e04e4b; /* rojo vivo */
+  color: white;
+}
+
+/* Para dispositivos móviles o pantallas pequeñas */
+@media (max-width: 600px) {
+  .ramo {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
 }
