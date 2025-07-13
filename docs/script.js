@@ -15,7 +15,7 @@ const ramos = [
 
   { id: "bioq", nombre: "Bioquímica General", semestre: 3, abre: ["micro", "ui1"], requiere: ["qo"] },
   { id: "qac", nombre: "Química Analítica Cuali-Cuanti", semestre: 3, abre: ["aqi"], requiere: ["qg2"] },
-  { id: "qoa", nombre: "Química Orgánica Avanzada", semestre: 3 },
+  { id: "qoa", nombre: "Química Orgánica Avanzada", semestre: 3, requiere: ["qo"] },
   { id: "biofis", nombre: "Biofísica", semestre: 3, requiere: ["fis"] },
   { id: "etica", nombre: "Ética", semestre: 3, abre: ["psoc"], requiere: ["antro"] },
 
