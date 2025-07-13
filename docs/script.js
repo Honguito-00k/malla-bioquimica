@@ -72,7 +72,7 @@ function inicializarEstado() {
 
 function crearMalla() {
   const contenedor = document.getElementById("malla-container");
-  contenedor.innerHTML = ""; // Limpiar contenido anterior
+  contenedor.innerHTML = ""; // limpiar contenido anterior
 
   for (let s = 1; s <= 10; s++) {
     const bloque = document.createElement("div");
@@ -102,15 +102,22 @@ function crearMalla() {
 
 function aprobarRamo(id) {
   const btn = document.getElementById(id);
-  if (btn.disabled || estado[id]) return;
-  estado[id] = true;
-  btn.classList.add("aprobado");
+  if (btn.disabled) return;
 
+  if (estado[id]) {
+    estado[id] = false;
+    btn.classList.remove("aprobado");
+  } else {
+    estado[id] = true;
+    btn.classList.add("aprobado");
+  }
+
+  // Actualizar estado de botones según requisitos
   ramos.forEach(r => {
     const requisitosOk = !r.requiere || r.requiere.every(req => estado[req]);
     const btnRamo = document.getElementById(r.id);
-    if (btnRamo && !estado[r.id] && requisitosOk) {
-      btnRamo.disabled = false;
+    if (btnRamo) {
+      btnRamo.disabled = !requisitosOk || estado[r.id];
     }
   });
 }
