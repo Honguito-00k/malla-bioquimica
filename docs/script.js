@@ -1,4 +1,3 @@
-
 const ramos = [
   { id: "qg1", nombre: "Química General I", semestre: 1, abre: ["qg2", "qo"] },
   { id: "bc", nombre: "Biología Celular", semestre: 1, abre: ["bmg", "fi"] },
@@ -36,34 +35,44 @@ const ramos = [
   { id: "bioqav", nombre: "Bioquímica Avanzada", semestre: 6, abre: ["qff"], requiere: ["bioq"] },
   { id: "bma", nombre: "Biología Molecular Avanzada", semestre: 6, abre: ["gm", "mm"], requiere: ["bmg"] },
   { id: "labbioq", nombre: "Lab Integrado Bioquímica", semestre: 6, abre: ["osmica", "ui2"] },
-  { id: "elec1", nombre: "Electivo I", semestre: 6 },
+  { id: "elec1", nombre: "Electivo I Formación e Identidad", semestre: 6 },
 
   { id: "qff", nombre: "Química Fisiopatológica y Farmacología", semestre: 7, abre: ["patmol"], requiere: ["bioqav"] },
   { id: "inmu", nombre: "Inmunología", semestre: 7, abre: ["bioqclin"], requiere: ["bca"] },
   { id: "gm", nombre: "Genética Molecular", semestre: 7, requiere: ["bma"] },
   { id: "mm", nombre: "Microbiología Molecular", semestre: 7, requiere: ["bma"] },
   { id: "osmica", nombre: "Bases Osmóticas e Info.", semestre: 7, requiere: ["labbioq"] },
-  { id: "elec2", nombre: "Electivo II", semestre: 7 },
+  { id: "elec2", nombre: "Electivo II Formación e Identidad", semestre: 7 },
 
   { id: "patmol", nombre: "Patología Molecular", semestre: 8, requiere: ["qff"] },
   { id: "bioqclin", nombre: "Bioquímica Clínica", semestre: 8, requiere: ["inmu"] },
   { id: "ui2", nombre: "Unidad de Investigación II", semestre: 8, abre: ["ui3", "practica"], requiere: ["labbioq"] },
-  { id: "elec3", nombre: "Electivo III", semestre: 8 },
+  { id: "elec3i", nombre: "Electivo I", semestre: 8 },
+  { id: "elec3fi", nombre: "Electivo III Formación e Identidad", semestre: 8 },
   { id: "hito2", nombre: "Hito Evaluativo Integrativo II", semestre: 8, requiere: ["bioetica","bca","bioqav","bma","labbioq","qff","inmu","gm","mm","osmica"] },
 
   { id: "calidad", nombre: "Control de Calidad", semestre: 9 },
   { id: "proj", nombre: "Formulación de Proyectos", semestre: 9 },
   { id: "ui3", nombre: "Unidad de Investigación III", semestre: 9, abre: ["memoria"], requiere: ["ui2"] },
+  { id: "elec4", nombre: "Electivo II", semestre: 9 },
   { id: "gestion", nombre: "Gestión de Carrera", semestre: 9 },
 
   { id: "practica", nombre: "Práctica Profesional", semestre: 10, requiere: ["ui2"] },
-  { id: "memoria", nombre: "Memoria de Título", semestre: 10, requiere: ["ui3"] }
+  { id: "memoria", nombre: "Memoria de Título", semestre: 10, requiere: ["ui3"] },
+  { id: "elec5", nombre: "Electivo III", semestre: 10 }
 ];
 
 const estado = {};
 
+function inicializarEstado() {
+  ramos.forEach(r => {
+    estado[r.id] = false;
+  });
+}
+
 function crearMalla() {
   const contenedor = document.getElementById("malla-container");
+  contenedor.innerHTML = ""; // Limpiar contenido anterior
 
   for (let s = 1; s <= 10; s++) {
     const bloque = document.createElement("div");
@@ -106,4 +115,7 @@ function aprobarRamo(id) {
   });
 }
 
-window.onload = crearMalla;
+window.onload = () => {
+  inicializarEstado();
+  crearMalla();
+};
