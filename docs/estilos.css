@@ -2,7 +2,7 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 20px;
-  background: #fDFDFD;
+  background: #fdfdfd;
 }
 
 h1 {
@@ -12,34 +12,33 @@ h1 {
 
 #malla-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-auto-rows: minmax(200px, auto);
+  grid-template-columns: repeat(10, 1fr); /* 10 columnas verticales */
   gap: 20px;
   padding: 20px;
-  max-width: 1200px;
-  margin: auto;
+  overflow-x: auto;
 }
 
 .semestre {
   border: 2px solid #005080;
   border-radius: 8px;
-  padding: 15px;
+  padding: 10px;
   background: #ffffff;
   display: flex;
   flex-direction: column;
+  align-items: stretch;
   gap: 10px;
 }
 
 .semestre h2 {
   margin: 0;
-  color: #003355;
   text-align: center;
-  font-size: 1.2em;
+  color: #003355;
+  font-size: 1em;
 }
 
 .ramos {
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-direction: column;
   gap: 8px;
 }
 
@@ -47,12 +46,13 @@ h1 {
   background-color: #f9d6d5;
   border: 2px solid #d9534f;
   color: #a94442;
-  padding: 8px 12px;
+  padding: 8px 10px;
   border-radius: 6px;
   cursor: pointer;
-  font-weight: 600;
-  transition: all 0.25s ease;
+  font-weight: bold;
   text-align: left;
+  transition: all 0.25s ease;
+  white-space: normal;
 }
 
 .ramo:disabled {
