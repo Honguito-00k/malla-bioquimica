@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Malla Bioquímica 2024</title>
+  <style>
+    body { font-family: sans-serif; background: #f8f9fa; padding: 20px; }
+    h1 { text-align: center; }
+    .semestre { border: 1px solid #ccc; border-radius: 10px; padding: 10px; margin: 10px; background: #fff; }
+    .ramos { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; }
+    .ramo { border: 1px solid #ddd; border-radius: 5px; padding: 10px; background: #e9ecef; cursor: pointer; }
+    .ramo:hover { background: #dee2e6; }
+  </style>
+</head>
+<body>
+  <h1>Malla Bioquímica USS 2024</h1>
+
+  <div class="semestre">
+    <h2>Semestre 1</h2>
+    <div class="ramos">
+      <div class="ramo">Biología Celular</div>
+      <div class="ramo">Química General</div>
+      <div class="ramo">Matemáticas</div>
+      <div class="ramo">Comunicación Científica</div>
+    </div>
+  </div>
+
+  <div class="semestre">
+    <h2>Semestre 2</h2>
+    <div class="ramos">
+      <div class="ramo" title="Requiere Química General">Química Orgánica</div>
+      <div class="ramo">Física</div>
+      <div class="ramo">Biología Molecular</div>
+      <div class="ramo">Bioestadística</div>
+    </div>
+  </div>
+
+  <!-- Agrega más semestres según tu malla -->
+</body>
+</html>
